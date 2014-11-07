@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  purchase_date: MyString
+  game_name: MyString
+  game_alt_name: MyString
+  system: MyString
+  includes: MyString
+
+two:
+  purchase_date: MyString
+  game_name: MyString
+  game_alt_name: MyString
+  system: MyString
+  includes: MyString

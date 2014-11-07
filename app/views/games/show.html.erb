@@ -1,0 +1,39 @@
+<%= link_to '« All games', games_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Purchase Date</th>
+      <th>Game Name</th>
+      <th>System</th>
+      <!--<th>Purchase Price</th>-->
+      <th>Includes</th>
+      <th>Alternate Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= @game.purchase_date %>
+      </td>
+      <td>
+        <%= @game.game_name %>
+      </td>
+      <td>
+        <%= @game.system %>
+      </td>
+      <td>
+        <%= @game.includes %>
+      </td>
+      <td>
+        <%= @game.game_alt_name %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_game_path(@game) %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to '« All games', games_path %>
