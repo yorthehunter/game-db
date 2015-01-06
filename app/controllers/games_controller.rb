@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
 
+  @bomb = GiantBomb::Api.key(ENV["giantbomb_key"])
+
   def new
     @game = Game.new
   end
@@ -20,6 +22,8 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+
+    # render :json => Game.all
   end
 
   def edit
