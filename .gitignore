@@ -17,3 +17,5 @@
 
 # Rubymine
 .idea/
+
+config/database.yml
