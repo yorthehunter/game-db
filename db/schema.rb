@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141107154847) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "games", force: true do |t|
     t.string   "purchase_date"
     t.string   "game_name"
