@@ -37,7 +37,7 @@
           <%= link_to 'Edit',   edit_game_path(game) %>
           <%= link_to 'Delete', game_path(game),
                       method: :delete,
-                      data: {confirm: 'Are you sure?'} %>
+                      data: { confirm: 'Are you sure?' } %>
           <%= link_to 'pricecharting.com »', "http://videogames.pricecharting.com/search?q=#{game.game_name}&type=videogames&go=Go", target: "_blank" %>
         </td>
       </tr>

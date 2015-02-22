@@ -43,4 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'bower-rails'
+
 gem 'giantbomb', '~> 0.5.2'
