@@ -1,0 +1,69 @@
+/*
+* Import Bootstrap piecemeal so it doesn't compete with Humble Kit too much
+* (assuming your app is using Humble Kit). The load order is _important_!
+*
+* If you want access to a particular component of Bootstrap, uncomment it
+* here (e.g. bootstrap/badges). Test your app for inconsistencies in the UI
+*/
+
+// Core Bootstrap: commenting any of these three lines may cause visual or halting errors
+// Unless you intend to comment out all of the lines here (thus removing all Bootstrap CSS)
+@import "bootstrap-sprockets";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+//@import "bootstrap/normalize";
+//@import "bootstrap/print";
+//@import "bootstrap/glyphicons";
+
+// Core CSS
+//@import "bootstrap/scaffolding";
+//@import "bootstrap/type";
+//@import "bootstrap/code";
+//@import "bootstrap/grid";
+//@import "bootstrap/tables";
+//@import "bootstrap/forms"; // Necessary to keep this if using navbar below (Bootstrap & Sass issue)
+//@import "bootstrap/buttons";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+//@import "bootstrap/button-groups";
+//@import "bootstrap/input-groups";
+//@import "bootstrap/navs";
+//@import "bootstrap/navbar"; // If using this, uncomment forms above (Bootstrap & Sass issue)
+//@import "bootstrap/breadcrumbs";
+//@import "bootstrap/pagination";
+//@import "bootstrap/pager";
+//@import "bootstrap/labels";
+//@import "bootstrap/badges";
+//@import "bootstrap/jumbotron";
+//@import "bootstrap/thumbnails";
+//@import "bootstrap/alerts";
+//@import "bootstrap/progress-bars";
+//@import "bootstrap/media";
+//@import "bootstrap/list-group";
+//@import "bootstrap/panels";
+//@import "bootstrap/responsive-embed";
+//@import "bootstrap/wells";
+//@import "bootstrap/close";
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+//@import "bootstrap/carousel";
+
+// Utility classes
+//@import "bootstrap/utilities";
+//@import "bootstrap/responsive-utilities";
+
+
+/* Bootstrap overrides and extensions
+   ========================================================================== */
+/*
+* Sometimes you need to adjust Bootstrap's default styling. Do that here but
+* keep the edits as limited as you can so as not to interfere with other
+* components of Bootstrap or future versions.
+*/

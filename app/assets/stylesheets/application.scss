@@ -1,0 +1,31 @@
+/* Default application manifest files
+   ========================================================================== */
+
+// Bootstrap custom import
+@import "stitch-fix-bootstrap";
+
+// Custom variable overrides for Humble Kit
+@import "custom_variables";
+
+// Humble Kit framework: http://www.humblekit.com/styleguide
+@import "humblekit/app/assets/stylesheets/humble_kit";
+
+// Custom application-specific colors
+@import "site/colors";
+
+// For when you need something in Humble Kit that just isn't there (yet)
+@import "humblekit_extensions";
+
+
+/* All of the other application-specific stylesheets get declared below
+   ========================================================================== */
+/*
+* Example:
+* @import "site/animations"
+*/
+
+// External & vendor styles manifest
+@import "site/external/external";
+
+// Navigation
+@import "site/nav";
