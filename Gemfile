@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'jquery-ui-rails'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'bower-rails'

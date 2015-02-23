@@ -1,0 +1,4 @@
+%table-standard,
+.table-standard {
+  @extend .table-condensed, .table-hover, .table-striped;
+}

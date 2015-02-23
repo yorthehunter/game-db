@@ -3,7 +3,7 @@
   %fieldset
     = f.label :purchase_date
     %br/
-    = f.text_field :purchase_date, disabled: disabled("edit")
+    = f.text_field :purchase_date, disabled: disabled("edit"), class: "js-date-picker"
   %fieldset
     = f.label :game_name
     %br/
