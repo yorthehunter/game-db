@@ -5,3 +5,6 @@
 
 jQuery(document).ready ->
   $("#game_purchase_date").datepicker()
+
+  $('body').on 'hidden.bs.modal', '.modal', ->
+    $(this).removeData 'bs.modal'

@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
 
   @bomb = GiantBomb::Api.key(ENV["giantbomb_key"])
+  layout false, only: [:edit]
 
   def new
     @game = Game.new
@@ -34,7 +35,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
 
     if @game.update(game_update_params)
-      redirect_to @game
+      redirect_to action: "index"
     else
       render 'edit'
     end
