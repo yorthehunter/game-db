@@ -24,7 +24,10 @@
   <fieldset>
     <%= f.label :includes %>
     <br>
-    <%= f.text_field :includes %>
+    <% ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i| %>
+      <%= f.label :includes, inc, value: inc %>
+      <%= f.radio_button :includes, inc, checked: i == 0 ? "checked" : false %>
+    <% end %>
   </fieldset>
 
   <p>
