@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_filter :authenticate
 
   @bomb = GiantBomb::Api.key(ENV["giantbomb_key"])
   layout false, only: [:edit]
@@ -47,6 +48,13 @@ class GamesController < ApplicationController
 
     redirect_to games_path
   end
+
+  protected
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == ENV["AUTH_USERNAME"] && password == ENV["AUTH_PASSWORD"]
+      end
+    end
 
   private
     def game_params
