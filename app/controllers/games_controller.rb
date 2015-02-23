@@ -54,6 +54,7 @@ class GamesController < ApplicationController
           :game_name,
           :game_alt_name,
           :system,
+          :purchase_price,
           :includes
       )
     end
@@ -62,6 +63,7 @@ class GamesController < ApplicationController
           :game_name,
           :game_alt_name,
           :system,
+          :purchase_price,
           :includes
       )
     end

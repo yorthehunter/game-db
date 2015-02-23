@@ -1,0 +1,8 @@
+- if form.errors.any?
+  #error_explanation
+    %h3
+      = pluralize(form.errors.count, "error")
+      prohibited this article from being saved:
+    %ul
+      - form.errors.full_messages.each do |msg|
+        %li= msg

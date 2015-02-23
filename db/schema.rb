@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107154847) do
+ActiveRecord::Schema.define(version: 20150223030024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "games", force: true do |t|
-    t.string   "purchase_date"
-    t.string   "game_name"
-    t.string   "game_alt_name"
-    t.string   "system"
-    t.string   "includes"
+  create_table "games", force: :cascade do |t|
+    t.string   "purchase_date",  limit: 255
+    t.string   "game_name",      limit: 255
+    t.string   "game_alt_name",  limit: 255
+    t.string   "system",         limit: 255
+    t.string   "includes",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "purchase_price"
   end
 
 end

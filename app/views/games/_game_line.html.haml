@@ -1,0 +1,13 @@
+%tr
+  %td= game.purchase_date
+  %td= link_to_if action_name == "index", game.game_name, game_path(game)
+  %td= game.system
+  %td= game.purchase_price
+  %td= game.includes
+  %td= game.game_alt_name
+  %td.actions
+    = link_to 'Edit',   edit_game_path(game)
+    = link_to 'Delete', game_path(game),
+      method: :delete,
+      data: { confirm: 'Are you sure?' }
+    = link_to 'pricecharting.com »', "http://videogames.pricecharting.com/search?q=#{game.game_name}&type=videogames&go=Go", target: "_blank"

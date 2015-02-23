@@ -1,0 +1,16 @@
+= link_to "+ New game", new_game_path
+%table
+  %thead
+    %tr
+      %th Purchase Date
+      %th Game Name
+      %th System
+      %th Purchase Price
+      %th Includes
+      %th Alternate Name
+      %th Actions
+  %tbody
+    - @games.each do |game|
+      = render "game_line", game: game
+
+= link_to "+ New game", new_game_path

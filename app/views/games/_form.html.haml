@@ -1,0 +1,30 @@
+= form_for @game do |f|
+  = render 'shared/form_error', form: @game
+  %fieldset
+    = f.label :purchase_date
+    %br/
+    = f.text_field :purchase_date, disabled: disabled("edit")
+  %fieldset
+    = f.label :game_name
+    %br/
+    = f.text_field :game_name
+  %fieldset
+    = f.label :game_alt_name
+    %br/
+    = f.text_field :game_alt_name
+  %fieldset
+    = f.label :system
+    %br/
+    = f.select :system, ["NES", "SNES", "Genesis", "GBA", "SFC"], include_blank: true
+  %fieldset
+    = f.label :purchase_price
+    %br/
+    = f.text_field :purchase_price
+  %fieldset
+    = f.label :includes
+    %br/
+    - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
+      = f.label :includes, inc, value: inc
+      = f.radio_button :includes, inc, checked: i == 0 ? "checked" : false
+  %p
+    = f.submit
