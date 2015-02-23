@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   #     end
   #   end
 
+  get 'games/readonly' => 'games#readonly', as: :index_readonly
   resources :games
 
   # Example resource route with sub-resources:

@@ -1,0 +1,19 @@
+.container
+  %header
+    %h1.h1
+      All Games
+      %small.thin.light (Readonly)
+
+  %table.table-standard
+    %thead
+      %tr
+        %th Purchase Date
+        %th Game Name
+        %th System
+        %th Purchase Price
+        %th Includes
+        %th Alternate Name
+        %th Actions
+    %tbody
+      - @games.each do |game|
+        = render "game_line", game: game

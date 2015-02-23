@@ -6,9 +6,10 @@
   %td= game.includes
   %td= game.game_alt_name
   %td.actions
-    = link_to 'Edit',   '#', class: "btn btn-xs", data: { toggle: "modal", target: "#edit-modal", remote: edit_game_path(game) }
-    = link_to 'Delete', game_path(game),
-      method: :delete,
-      data: { confirm: 'Are you sure?' },
-      class: "btn btn-xs btn-danger"
+    - unless action_name == "readonly"
+      = link_to 'Edit',   '#', class: "btn btn-xs", data: { toggle: "modal", target: "#edit-modal", remote: edit_game_path(game) }
+      = link_to 'Delete', game_path(game),
+        method: :delete,
+        data: { confirm: 'Are you sure?' },
+        class: "btn btn-xs btn-danger"
     = link_to 'pricecharting.com »', "http://videogames.pricecharting.com/search?q=#{game.game_name}&type=videogames&go=Go", target: "_blank", class: "btn btn-xs"
