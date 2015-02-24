@@ -10,10 +10,10 @@
   %table.table-standard
     %thead
       %tr
-        %th Purchase Date
-        %th Game Name
-        %th System
-        %th Purchase Price
+        %th= link_to "Purchase Date", sort: "purchase_date"
+        %th= link_to "Game Name", sort: "game_name"
+        %th= link_to "System", sort: "system"
+        %th= link_to "Purchase Price", sort: "purchase_price"
         %th Includes
         %th Alternate Name
         %th Actions

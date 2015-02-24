@@ -2,7 +2,7 @@
   %td= game.purchase_date
   %td= link_to_if action_name == "index", game.game_name, game_path(game)
   %td= game.system
-  %td= game.purchase_price
+  %td= !game.purchase_price.blank? ? number_to_currency(game.purchase_price) : "--"
   %td= game.includes
   %td= game.game_alt_name
   %td.actions

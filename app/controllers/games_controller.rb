@@ -14,7 +14,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
-      redirect_to @game
+      redirect_to action: "index"
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
+    @games = Game.order(params[:sort])
 
     # render :json => Game.all
   end

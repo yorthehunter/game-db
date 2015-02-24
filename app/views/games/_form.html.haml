@@ -24,7 +24,8 @@
     = f.label :includes
     %br/
     - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
-      = f.label :includes, inc, value: inc
-      = f.radio_button :includes, inc, checked: i == 0 ? "checked" : false
+      = f.label :includes, inc, value: inc do
+        = inc
+        = f.radio_button :includes, inc, checked: i == 0 ? "checked" : false
   %p
     = f.submit
