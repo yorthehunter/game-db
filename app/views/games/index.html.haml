@@ -1,8 +1,12 @@
+= debug @bomb
+
 .container
   %header
     %h1.h1 All Games
 
-  = link_to "+ New game", new_game_path
+
+  .m1= link_to "+ New game", '#', class: "btn btn-sm", data: { toggle: "modal", target: "#edit-modal", remote: new_game_path }
+
   %table.table-standard
     %thead
       %tr
@@ -17,9 +21,8 @@
       - @games.each do |game|
         = render "game_line", game: game
 
-  = link_to "+ New game", new_game_path
-
+  .m1= link_to "+ New game", '#', class: "btn btn-sm", data: { toggle: "modal", target: "#edit-modal", remote: new_game_path }
 
 #edit-modal.modal.fade
   .modal-dialog
-    .modal-content
+    .modal-content.p1

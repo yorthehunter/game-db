@@ -67,3 +67,32 @@
 * keep the edits as limited as you can so as not to interfere with other
 * components of Bootstrap or future versions.
 */
+
+.ui-datepicker {
+  background-color: white;
+
+  @extend %shadowed-light;
+
+  a.ui-state-default {
+    @extend %btn, %btn-sm, %btn-link;
+  }
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  @extend %btn, %btn-xs, %btn-link;
+}
+
+.ui-datepicker-prev { @extend %left; }
+.ui-datepicker-next { @extend %right; }
+
+.ui-datepicker-calendar {
+  @extend .table-condensed;
+}
+
+.ui-datepicker-header {
+  @extend %clearfix;
+}
+.ui-datepicker-title {
+  @extend %line2, %text-c;
+}

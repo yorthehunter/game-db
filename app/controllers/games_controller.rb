@@ -1,8 +1,10 @@
 class GamesController < ApplicationController
   before_filter :authenticate, only: [:index, :new, :create, :edit, :update, :show, :destroy]
 
-  @bomb = GiantBomb::Api.key(ENV["giantbomb_key"])
-  layout false, only: [:edit]
+  # @bomb = GiantBomb::API.key(ENV["GIANTBOMB_KEY"])
+
+  layout false, only: [:edit, :new]
+
 
   def new
     @game = Game.new

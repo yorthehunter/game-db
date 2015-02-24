@@ -4,7 +4,12 @@
 
 
 jQuery(document).ready ->
-  $("#game_purchase_date").datepicker()
+
+  $("[data-date-picker=true]").datepicker()
+  $(".js-date-picker").datepicker()
 
   $('body').on 'hidden.bs.modal', '.modal', ->
     $(this).removeData 'bs.modal'
+
+  $('body').on 'loaded.bs.modal', '.modal', ->
+    $("[data-date-picker=true]").datepicker()

@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # include GiantBomb::Api.key(ENV["giantbomb_key"])
+  # include GiantBomb::Api.key(ENV["GIANTBOMB_KEY"])
 
 end
