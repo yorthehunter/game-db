@@ -26,7 +26,7 @@ class GamesController < ApplicationController
   end
 
   def readonly
-    @games = Game.all
+    @games = Game.order(sort_column + " " + sort_direction)
   end
 
   def index
