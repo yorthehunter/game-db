@@ -1,19 +1,17 @@
-= debug @bomb
-
 .container
   %header
     %h1.h1 All Games
-
 
   .m1= link_to "+ New game", '#', class: "btn btn-sm", data: { toggle: "modal", target: "#edit-modal", remote: new_game_path }
 
   %table.table-standard
     %thead
       %tr
-        %th= link_to "Purchase Date", sort: "purchase_date"
-        %th= link_to "Game Name", sort: "game_name"
-        %th= link_to "System", sort: "system"
-        %th= link_to "Purchase Price", sort: "purchase_price"
+
+        %th= sortable "purchase_date"
+        %th= sortable "game_name"
+        %th= sortable "system"
+        %th= sortable "purchase_price"
         %th Includes
         %th Alternate Name
         %th Actions

@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_filter :authenticate, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # @bomb = GiantBomb::API.key(ENV["GIANTBOMB_KEY"])
 
@@ -29,7 +30,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.order(params[:sort])
+    @games = Game.order(sort_column + " " + sort_direction)
 
     # render :json => Game.all
   end
@@ -81,6 +82,14 @@ class GamesController < ApplicationController
           :purchase_price,
           :includes
       )
+    end
+
+    def sort_column
+      Game.column_names.include?(params[:sort]) ? params[:sort] : "game_name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
 end

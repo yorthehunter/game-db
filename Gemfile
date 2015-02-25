@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'font-awesome-sass'
 gem 'jquery-ui-rails'
 gem 'haml-rails'
 gem 'bootstrap-sass'
