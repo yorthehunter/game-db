@@ -42,7 +42,7 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
 
-    if @game.update(game_update_params)
+    if @game.update(game_params)
       redirect_to action: "index"
     else
       render 'edit'
@@ -67,16 +67,6 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(
           :purchase_date,
-          :game_name,
-          :game_alt_name,
-          :system,
-          :purchase_price,
-          :includes,
-          photos: []
-      )
-    end
-    def game_update_params
-      params.require(:game).permit(
           :game_name,
           :game_alt_name,
           :system,
