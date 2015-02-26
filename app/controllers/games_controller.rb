@@ -26,7 +26,7 @@ class GamesController < ApplicationController
   end
 
   def readonly
-    @games = Game.all
+    @games = Game.order(sort_column + " " + sort_direction)
   end
 
   def index
@@ -71,7 +71,8 @@ class GamesController < ApplicationController
           :game_alt_name,
           :system,
           :purchase_price,
-          :includes
+          :includes,
+          photos: []
       )
     end
     def game_update_params
@@ -80,7 +81,8 @@ class GamesController < ApplicationController
           :game_alt_name,
           :system,
           :purchase_price,
-          :includes
+          :includes,
+          photos: []
       )
     end
 

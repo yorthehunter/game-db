@@ -43,6 +43,10 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'responders'
+gem 'cloudinary'
+gem 'attachinary'
+
 gem 'font-awesome-sass'
 gem 'jquery-ui-rails'
 gem 'haml-rails'

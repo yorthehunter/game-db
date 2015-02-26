@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: yorthehunter
+  api_key: '645973739519227'
+  api_secret: KspNoZhbo1COksxmwFJjqS1oAIU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: yorthehunter
+  api_key: '645973739519227'
+  api_secret: KspNoZhbo1COksxmwFJjqS1oAIU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: yorthehunter
+  api_key: '645973739519227'
+  api_secret: KspNoZhbo1COksxmwFJjqS1oAIU
+  enhance_image_tag: true
+  static_image_support: false

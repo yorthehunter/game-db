@@ -13,3 +13,5 @@ jQuery(document).ready ->
 
   $('body').on 'loaded.bs.modal', '.modal', ->
     $("[data-date-picker=true]").datepicker()
+
+  $('.attachinary-input').attachinary()
