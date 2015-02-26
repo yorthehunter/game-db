@@ -22,6 +22,9 @@ module GameDb
 
     require "giantbomb"
 
+    # Cloudinary attachment gem
+    require "attachinary/orm/active_record"
+
     GiantBomb::Api.key(ENV["giantbomb_key"])
   end
 end

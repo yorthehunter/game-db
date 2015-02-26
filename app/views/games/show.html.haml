@@ -11,6 +11,12 @@
       %th Actions
   %tbody= render "game_line", game: @game
 = link_to '« All games', games_path
+
+- @game.photos.each do |photo|
+  = cl_image_tag photo.path, { size: '125x125', crop: :fit }
+
+
+
 / <hr>
 / 
 / <div class="container">

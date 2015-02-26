@@ -21,6 +21,9 @@
     %br/
     = f.text_field :purchase_price
   %fieldset
+    = f.attachinary_file_field :photos
+
+  %fieldset
     = f.label :includes
     %br/
     - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|

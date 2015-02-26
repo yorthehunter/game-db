@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   get 'games/readonly' => 'games#readonly', as: :index_readonly
   resources :games
 
+  # Cloudinary Attachment gem
+  mount Attachinary::Engine => "/attachinary"
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

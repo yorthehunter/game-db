@@ -71,7 +71,8 @@ class GamesController < ApplicationController
           :game_alt_name,
           :system,
           :purchase_price,
-          :includes
+          :includes,
+          photos: []
       )
     end
     def game_update_params
@@ -80,7 +81,8 @@ class GamesController < ApplicationController
           :game_alt_name,
           :system,
           :purchase_price,
-          :includes
+          :includes,
+          photos: []
       )
     end
 
