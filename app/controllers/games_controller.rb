@@ -4,7 +4,7 @@ class GamesController < ApplicationController
 
   # @bomb = GiantBomb::API.key(ENV["GIANTBOMB_KEY"])
 
-  layout false, only: [:edit, :new]
+  layout false, only: [:edit, :new, :show]
 
 
   def new

@@ -10,6 +10,9 @@ jQuery(document).ready ->
 
   $('body').on 'hidden.bs.modal', '.modal', ->
     $(this).removeData 'bs.modal'
+    $('.modal-content', this).empty()
+    $('.modal-content', this).append ->
+      "<div class='loading-spinner f-xl'><span class='fa fa-spinner'></span></div>"
 
   $('body').on 'loaded.bs.modal', '.modal', ->
     $("[data-date-picker=true]").datepicker()
