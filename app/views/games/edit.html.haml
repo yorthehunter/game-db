@@ -1,2 +1,6 @@
-%h1.h4 Edit #{@game.game_name}
+%header.border-b.border-gray-light
+  %button.close.right.btn.btn-link.btn-sm{ "aria-label" => "Close", data: { dismiss: "modal" }, type: "button" }
+    %span.fa.fa-close{ "aria-hidden" => "true" }
+  %h1.h4.mb1 Edit #{@game.game_name}
+
 = render "form"

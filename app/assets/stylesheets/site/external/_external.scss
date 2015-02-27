@@ -9,6 +9,9 @@
 * Put web fonts in assets/fonts and @import their @font-face declarations here
 */
 //@import "fonts/lato";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
 

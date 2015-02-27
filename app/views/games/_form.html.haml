@@ -3,7 +3,7 @@
   %fieldset
     = f.label :purchase_date
     %br/
-    = f.text_field :purchase_date, disabled: disabled("edit"), data: { "date-picker" => true }, class: "js-date-picker"
+    = f.text_field :purchase_date, data: { "date-picker" => true }, class: "js-date-picker"
   %fieldset
     = f.label :game_name
     %br/
@@ -15,7 +15,7 @@
   %fieldset
     = f.label :system
     %br/
-    = f.select :system, ["NES", "SNES", "Genesis", "GBA", "SFC"], include_blank: true
+    = f.select :system, ["NES", "Famicom", "SNES", "SFC", "GBA", "Genesis", "DS"], include_blank: true
   %fieldset
     = f.label :purchase_price
     %br/
@@ -31,4 +31,4 @@
         = inc
         = f.radio_button :includes, inc, checked: i == 0 ? "checked" : false
   %p
-    = f.submit
+    = f.submit class: 'btn btn-primary'

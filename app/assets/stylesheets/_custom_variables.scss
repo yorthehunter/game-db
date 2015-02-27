@@ -5,3 +5,11 @@
 
 // Access custom site color variables so that they can be used here
 @import "site/colors";
+
+$font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-weight-base:  400;
+$font-weight-thick: 800;
+$font-weight-thin:  300;
+
+$headings-weight: $font-weight-base;
