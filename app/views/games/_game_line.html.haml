@@ -1,6 +1,6 @@
 %tr
   %td= game.purchase_date
-  %td= link_to_if action_name == "index", game.game_name, game_path(game)
+  %td= link_to game.game_name, '#', data: { toggle: "modal", target: "#edit-modal", remote: game_path(game) }
   %td= game.system
   - unless action_name == "readonly"
     %td= !game.purchase_price.blank? ? number_to_currency(game.purchase_price) : "--"

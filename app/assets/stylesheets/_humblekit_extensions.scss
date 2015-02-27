@@ -7,3 +7,7 @@
  */
 
 @include btn_style("danger", $base-red);
+
+img {
+  max-width: 100%;
+}

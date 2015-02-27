@@ -1,23 +1,23 @@
-.container
-  %header
-    %aside.right= link_to '« All games', games_path, class: "btn btn-outline"
-    %h1.h1= @game.game_name
+%h1.h1= @game.game_name
 
-  %table
-    %thead
-      %tr
-        %th Purchase Date
-        %th Game Name
-        %th System
-        %th Purchase Price
-        %th Includes
-        %th Alternate Name
-        %th Actions
-    %tbody= render "game_line", game: @game
+%table
+  %thead
+    %tr
+      %th Purchase Date
+      %th Game Name
+      %th System
+      %th Includes
+      %th Alternate Name
+      %th Actions
+  %tbody
+    %tr
+      %td= @game.purchase_date
+      %td= @game.game_name
+      %td= @game.system
+      %td= @game.includes
+      %td= @game.game_alt_name
+      %td.actions
+        = link_to 'pricecharting.com »', "http://videogames.pricecharting.com/search?q=#{@game.game_name}&type=videogames&go=Go", target: "_blank", class: "btn btn-xs"
 
-  - @game.photos.each do |photo|
-    = cl_image_tag photo.path
-
-  #edit-modal.modal.fade
-    .modal-dialog.modal-lg
-      .modal-content.p1
+- @game.photos.each do |photo|
+  = cl_image_tag photo.path
