@@ -1,6 +1,6 @@
 {
   "name": "humblekit",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "homepage": "https://github.com/yorthehunter/humblekit",
   "authors": [
     "yorthehunter <boru.design@gmail.com>"
@@ -67,11 +67,11 @@
   "devDependencies": {
     "Cortana": "~1.2.8"
   },
-  "_release": "0.4.2",
+  "_release": "0.4.3",
   "_resolution": {
     "type": "version",
-    "tag": "0.4.2",
-    "commit": "41b3914ccf73658ad738ed31cefaa301cd04a5d8"
+    "tag": "0.4.3",
+    "commit": "8d2f38ae375d3d74527b620c79197e8aa15c1e2b"
   },
   "_source": "git@github.com:yorthehunter/humblekit.git",
   "_target": "*",

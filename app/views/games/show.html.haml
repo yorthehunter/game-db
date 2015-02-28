@@ -1,3 +1,24 @@
+%header
+  %h1
+
+%article.grid.grid-rev{ role: "main row" }
+  %header.g._2-3
+    %h1.h4= @game.game_name
+  %ul.list-unstyled
+    %li= @game.purchase_date
+    %li= @game.game_name
+    %li= @game.system
+    %li= @game.includes
+    %li= @game.game_alt_name
+
+
+  .g._1-3
+
+
+
+
+
+
 %h1.h1= @game.game_name
 
 %table
