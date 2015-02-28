@@ -1,44 +1,20 @@
-%header
-  %h1
-
-%article.grid.grid-rev{ role: "main row" }
-  %header.g._2-3
-    %h1.h4= @game.game_name
-  %ul.list-unstyled
-    %li= @game.purchase_date
-    %li= @game.game_name
-    %li= @game.system
-    %li= @game.includes
-    %li= @game.game_alt_name
-
-
-  .g._1-3
-
-
-
-
-
-
-%h1.h1= @game.game_name
-
-%table
-  %thead
-    %tr
-      %th Purchase Date
-      %th Game Name
-      %th System
-      %th Includes
-      %th Alternate Name
-      %th Actions
-  %tbody
-    %tr
-      %td= @game.purchase_date
-      %td= @game.game_name
-      %td= @game.system
-      %td= @game.includes
-      %td= @game.game_alt_name
-      %td.actions
+%article.media{ role: "main row" }
+  %aside.media-object.left._1-3.mr1
+    - if @game.photos.any?
+      - @game.photos.each do |photo|
+        = cl_image_tag photo.path
+    - else
+      NO IMAGE
+  %section.media-body
+    %header
+      %button.close.right.btn.btn-link.btn-sm{ "aria-label" => "Close", data: { dismiss: "modal" }, type: "button" }
+        %span.fa.fa-close{ "aria-hidden" => "true" }
+      %h1.h4= @game.game_name
+    %ul.list-unstyled
+      %li= @game.purchase_date
+      %li= @game.game_name
+      %li= @game.system
+      %li= @game.includes
+      %li= @game.game_alt_name
+      %li.actions
         = link_to 'pricecharting.com »', "http://videogames.pricecharting.com/search?q=#{@game.game_name}&type=videogames&go=Go", target: "_blank", class: "btn btn-xs"
-
-- @game.photos.each do |photo|
-  = cl_image_tag photo.path
