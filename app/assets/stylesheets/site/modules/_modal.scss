@@ -1,0 +1,88 @@
+#edit-modal.modal.fade
+.modal-dialog.modal-lg
+.modal-content.p1
+.loading-spinner.f-xl
+%span.fa.fa-spinner
+
+
+.modal-open { overflow: hidden; }
+
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    @include translate(0, -10%);
+    @include transition-transform(0.2s ease-out);
+  }
+  &.in .modal-dialog {
+    @include translate(0, 0)
+  }
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: $body-bg;
+  background-clip: padding-box;
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $ghost-black-base;
+  // Fade for backdrop
+  &.fade {
+    opacity: 0.0;
+  }
+  &.in {
+    opacity: 1.0;
+  }
+}
+
+
+// Scale up the modal
+@media (min-width: $screen-sm-min) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    width: $modal-md;
+    margin: 3rem auto;
+  }
+
+  // Modal sizes
+  .modal-sm {
+    width: $modal-sm;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .modal-lg {
+    width: $modal-lg;
+  }
+}
