@@ -1,0 +1,21 @@
+.prepend {
+  position: relative;
+
+  > input {
+    padding-left: 2rem !important;
+  }
+
+  &::before {
+    content: '$';
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    width: 1.5rem;
+    background-color: $gray-lighter;
+    z-index: 1;
+    pointer-events: none;
+    line-height: 3rem;
+    text-align: center;
+  }
+}
