@@ -8,6 +8,9 @@
 
 @include btn_style("danger", $base-red);
 
-img {
+%img,
+.img {
   max-width: 100%;
+  width: auto;
+  height: auto;
 }

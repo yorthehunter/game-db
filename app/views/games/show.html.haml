@@ -1,8 +1,12 @@
 %article.media{ role: "main row" }
   %aside.media-object.left._1-3.mr1
     - if @game.photos.any?
-      - @game.photos.each do |photo|
-        = cl_image_tag photo.path
+      .grid.grid-nopad
+        .g._5-6
+          = cl_image_tag @game.photos.first.path, width: 300, crop: :fit, class: "img"
+        .g._1-6
+          - @game.photos.each do |photo|
+            = cl_image_tag photo.path, width: 50, height: 50, crop: :fill, class: "img"
     - else
       NO IMAGE
   %section.media-body

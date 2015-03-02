@@ -13,3 +13,19 @@ $font-weight-thick: 800;
 $font-weight-thin:  300;
 
 $headings-weight: $font-weight-base;
+
+
+/* Buttons variables
+   ========================================================================== */
+
+$btn-border-radius:    0.05rem;
+$btn-darken-amount:    15%;
+
+$btn-inset-option:        false;
+$btn-border-option:       false;
+$btn-radius-option:       true;
+$btn-text-shadow-option:  false;
+$btn-transition-option:   true;
+$btn-hover-bg-option:     true;
+$btn-mobile-full-width:   true;
+$btn-group-spaced-option: true;
