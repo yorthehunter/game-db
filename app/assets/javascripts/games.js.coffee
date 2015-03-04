@@ -5,7 +5,7 @@
 
 jQuery(document).ready ->
 
-  $("[data-date-picker=true]").datepicker()
+  $("[data-date-picker]").datepicker()
   $(".js-date-picker").datepicker()
 
   $('body').on 'hidden.bs.modal', '.modal', ->
@@ -15,5 +15,12 @@ jQuery(document).ready ->
       "<div class='loading-spinner f-xl'><span class='fa fa-spinner'></span></div>"
 
   $('body').on 'loaded.bs.modal', '.modal', ->
-    $("[data-date-picker=true]").datepicker()
+    $("[data-date-picker]").datepicker()
     $('.attachinary-input').attachinary()
+    $("[data-clickable-tiny-thumb]").click (e) ->
+      e.preventDefault()
+      target = $('[data-thumb-target]')
+      thumb_path    = $(this).data("thumb-path")
+      full_img_path = $(this).data("full-img-path")
+      target.attr("href", full_img_path)
+      target.find('img').attr("src", thumb_path)

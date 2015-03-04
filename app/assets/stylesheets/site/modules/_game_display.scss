@@ -1,0 +1,16 @@
+.game-info {
+  @extend %media;
+}
+
+.game-image {
+  @extend %media-object, %left, %mr1, %_1-2;
+}
+
+.game-thumbs {
+  @extend %list-condensed;
+  @extend %list-unstyled;
+
+  &__thumb {
+    @extend %m-sm;
+  }
+}

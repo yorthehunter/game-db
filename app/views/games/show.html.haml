@@ -1,12 +1,25 @@
-%article.media{ role: "main row" }
-  %aside.media-object.left._1-3.mr1
+%article.game-info{ role: "main row" }
+  %aside.game-image
     - if @game.photos.any?
       .grid.grid-nopad
         .g._5-6
-          = cl_image_tag @game.photos.first.path, width: 300, crop: :fit, class: "img"
+          %a{ href: (cl_image_path @game.photos.first.path),
+                              target: "_blank",
+                              data: { thumb_target: true } }
+            = cl_image_tag @game.photos.first.path,
+              width: 365,
+              crop: :fit,
+              class: "img"
         .g._1-6
-          - @game.photos.each do |photo|
-            = cl_image_tag photo.path, width: 50, height: 50, crop: :fill, class: "img"
+          %ul.game-thumbs
+            - @game.photos.each do |photo|
+              %li.game-thumbs__thumb
+                %a{ href: "#",
+                    data: { clickable_tiny_thumb: true,
+                            tiny_thumb_path: (cl_image_path photo.path, width: 70, height: 70, quality: 40, crop: :fill),
+                            thumb_path:      (cl_image_path photo.path, width: 365, crop: :fit),
+                            full_img_path:   (cl_image_path photo.path) } }
+                  = cl_image_tag photo.path, width: 70, height: 70, crop: :fill, quality: 40, class: "img"
     - else
       NO IMAGE
   %section.media-body
