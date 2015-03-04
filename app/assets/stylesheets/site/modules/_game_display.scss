@@ -12,5 +12,11 @@
 
   &__thumb {
     @extend %m-sm;
+
+    > a {
+      @extend %ib;
+      
+      &:hover { @extend %shadowed-link-light-border; }
+    }
   }
 }
