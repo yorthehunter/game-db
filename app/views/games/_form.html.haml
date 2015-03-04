@@ -20,16 +20,17 @@
   %fieldset
     = f.label :system, "System:"
     = f.select :system, ["NES", "Famicom", "SNES", "SFC", "GBA", "Genesis", "DS"], include_blank: true
-  %fieldset
+  %fieldset.mb1
     = f.attachinary_file_field :photos
 
   %fieldset
     = f.label :includes, "Includes:"
-    - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
-      = f.label :includes, inc, value: inc do
-        = inc
-        = f.radio_button :includes, inc, checked: i == 0 ? "checked" : false
+    .btn-group
+      - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
+        = f.label :includes, inc, class: "btn btn-tertiary", value: inc do
+          = inc
+          = f.radio_button :includes, inc, checked: i == 0 ? "checked" : false
   %hr
   %fieldset
-    = f.submit class: 'btn btn-primary'
+    = f.submit class: 'btn btn-primary', data: { disable_with:  "Updating game..."}
     = f.button "Cancel", class: 'btn btn-link', data: { dismiss: "modal" }, type: "button"

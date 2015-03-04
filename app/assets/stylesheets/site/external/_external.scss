@@ -10,7 +10,7 @@
 */
 //@import "fonts/lato";
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -23,3 +23,6 @@
 * https://github.com/stitchfix/color_kit
 */
 //@import "color_kit/sass/colors";
+
+// Attachinary Cloudinary ruby implementation
+@import "attachinary";

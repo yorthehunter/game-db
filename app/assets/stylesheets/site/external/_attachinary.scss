@@ -1,0 +1,28 @@
+.attachinary-input {
+  @extend %bg-gray-lightest;
+  padding-top:    0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left:   0.5rem !important;
+  padding-right:  0.5rem !important;
+  cursor: pointer;
+}
+
+.attachinary_container {
+
+  @extend %pyhalf, %bg-gray-lightest;
+
+  > ul {
+    @extend %list-condensed, %list-inline;
+
+    > li {
+      font-size: 0;
+      padding-top: 0.5rem;
+      @extend %bg-ghost-black-light;
+
+      > a {
+        @extend %btn, %btn-xs, %btn-link, %full-width;
+      }
+    }
+  }
+
+}

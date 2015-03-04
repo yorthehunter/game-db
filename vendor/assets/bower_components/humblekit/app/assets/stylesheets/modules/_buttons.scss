@@ -338,6 +338,7 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
     }
 
     @if $btn-border-option { border-width: $btn-border-width; }
+    @else { border-width: 0; }
 
     @if $btn-radius-option { border-radius: $btn-border-radius; }
 
