@@ -7,4 +7,11 @@
     = cloudinary_js_config
     = csrf_meta_tags
   %body
+    - flash.each do |key, value|
+      .p1.alert.fade.in{ class: "skin-#{key}" }
+        %button.btn.btn-sm.btn-link.btn-link-dark.light.close.right{ data: { dismiss: "alert" } }
+          %span.link-white.fa.fa-close
+        %p.container.m0
+          = value.html_safe
+
     = yield

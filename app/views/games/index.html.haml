@@ -1,3 +1,7 @@
+- if @game
+  - @game.errors.full_messages.each do |message|
+    = message
+
 .container
   %header
     %h1.h1 All Games

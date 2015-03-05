@@ -24,10 +24,10 @@
       - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
         = f.label :includes, inc, class: "btn btn-tertiary", value: inc do
           = inc
-          = f.radio_button :includes, inc, checked: i == 0 ? "checked" : false
+          = f.radio_button :includes, inc, checked: inc == @game.includes ? "checked" : false
   %fieldset
     = f.attachinary_file_field :photos
   %hr
   %fieldset
-    = f.submit class: 'btn btn-primary', data: { disable_with:  "Updating game..."}
+    = f.submit class: 'btn btn-primary', data: { disable_with: (action_name == "new" ? "Adding game..." : "Updating game...")}
     = f.button "Cancel", class: 'btn btn-link', data: { dismiss: "modal" }, type: "button"

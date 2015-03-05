@@ -4,7 +4,6 @@
 
 
 jQuery(document).ready ->
-
   $("[data-date-picker]").datepicker()
   $(".js-date-picker").datepicker()
 
@@ -24,3 +23,7 @@ jQuery(document).ready ->
       full_img_path = $(this).data("full-img-path")
       target.attr("href", full_img_path)
       target.find('img').attr("src", thumb_path)
+
+  $("#new_game").on("ajax:error", (e, data, status, xhr) ->
+    $("#new_game").render_form_errors('client', data.responseJSON)
+  )

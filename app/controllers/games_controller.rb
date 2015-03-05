@@ -15,9 +15,10 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
+      flash[:success] = "Successfully added <strong>#{@game.game_name}</strong> to the database!".html_safe
       redirect_to action: "index"
     else
-      render 'new'
+      redirect_to action: "index", error: 'Couldn\'t save the game.', errors: @game.errors
     end
   end
 
@@ -43,6 +44,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
 
     if @game.update(game_params)
+      flash[:success] = "Successfully edited <strong>#{@game.game_name}</strong>.".html_safe
       redirect_to action: "index"
     else
       render 'edit'
@@ -52,7 +54,7 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-
+    flash[:info] = "<strong>#{@game.game_name}</strong> was successfully removed.".html_safe
     redirect_to games_path
   end
 
