@@ -18,7 +18,8 @@ class GamesController < ApplicationController
       flash[:success] = "Successfully added <strong>#{@game.game_name}</strong> to the database!".html_safe
       redirect_to action: "index"
     else
-      redirect_to action: "index", error: 'Couldn\'t save the game.', errors: @game.errors
+      flash[:alert] = "Couldn't create game: #{@game.errors.full_messages.join(', ')}"
+      redirect_to action: "index"
     end
   end
 
@@ -47,7 +48,8 @@ class GamesController < ApplicationController
       flash[:success] = "Successfully edited <strong>#{@game.game_name}</strong>.".html_safe
       redirect_to action: "index"
     else
-      render 'edit'
+      flash[:alert] = "Couldn't edit game: #{@game.errors.full_messages.join(', ')}"
+      redirect_to action: "index"
     end
   end
 
