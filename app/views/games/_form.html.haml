@@ -1,3 +1,5 @@
+= debug @game.not_available
+
 = form_for @game do |f|
   = render 'shared/form_error', form: @game
   %fieldset.grid.form-stacked.m1
@@ -27,7 +29,18 @@
           = f.radio_button :includes, inc, checked: inc == @game.includes ? "checked" : false
   %fieldset
     = f.attachinary_file_field :photos
-  %hr
   %fieldset
-    = f.submit class: 'btn btn-primary', data: { disable_with: (action_name == "new" ? "Adding game..." : "Updating game...")}
-    = f.button "Cancel", class: 'btn btn-link', data: { dismiss: "modal" }, type: "button"
+    = f.label :not_available
+    = f.check_box :not_available
+  %hr
+  %fieldset.grid
+    .g._1-2
+
+    .g._1-2
+      = f.submit class: 'btn btn-primary', data: { disable_with: (action_name == "new" ? "Adding game..." : "Updating game...")}
+      = f.button "Cancel", class: 'btn btn-link', data: { dismiss: "modal" }, type: "button"
+
+= form_for @game do |hf|
+  %fieldset
+    = hf.hidden_field :not_available, :value => !@game.not_available
+    = hf.submit class: 'btn btn-sm btn-tertiary'

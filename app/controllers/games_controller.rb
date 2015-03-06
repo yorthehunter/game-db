@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_filter :authenticate, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+  before_filter :authenticate, only: [:index, :new, :create, :edit, :update, :show, :destroy, :activate]
   helper_method :sort_column, :sort_direction
 
   # @bomb = GiantBomb::API.key(ENV["GIANTBOMB_KEY"])
@@ -76,6 +76,7 @@ class GamesController < ApplicationController
           :system,
           :purchase_price,
           :includes,
+          :not_available,
           photos: []
       )
     end
