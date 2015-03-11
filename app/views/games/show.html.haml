@@ -1,5 +1,7 @@
 %article.game-info{ role: "main row" }
-  %aside.game-image
+
+  = render 'shared/modal_header', heading: @game.game_name
+  %aside.game-image.p1
     - if @game.photos.any?
       .grid.grid-nopad
         .g._5-6
@@ -22,11 +24,7 @@
                   = cl_image_tag photo.path, width: 70, height: 70, crop: :fill, quality: 40, class: "img"
     - else
       NO IMAGE
-  %section.media-body
-    %header
-      %button.close.right.btn.btn-link.btn-sm{ "aria-label" => "Close", data: { dismiss: "modal" }, type: "button" }
-        %span.fa.fa-close{ "aria-hidden" => "true" }
-      %h1.h4= @game.game_name
+  %section.media-body.p1
     %ul.list-unstyled
       %li= @game.purchase_date
       %li= @game.game_name

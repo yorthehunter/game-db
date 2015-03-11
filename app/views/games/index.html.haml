@@ -15,7 +15,7 @@
         %th= sortable "game_name"
         %th= sortable "system"
         %th Purchase Price
-        %th Includes
+        %th= sortable "includes"
         %th Alternate Name
         %th Actions
     %tbody
@@ -24,8 +24,4 @@
 
   .m1= link_to "+ New game", '#', class: "btn btn-sm", data: { toggle: "modal", target: "#edit-modal", remote: new_game_path }
 
-#edit-modal.modal.fade
-  .modal-dialog.modal-lg
-    .modal-content.p1
-      .loading-spinner.f-xl
-        %span.fa.fa-spinner
+= render "shared/modal"

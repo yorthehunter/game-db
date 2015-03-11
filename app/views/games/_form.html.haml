@@ -1,46 +1,41 @@
-= debug @game.not_available
+- disabled ||= false
 
-= form_for @game do |f|
-  = render 'shared/form_error', form: @game
-  %fieldset.grid.form-stacked.m1
-    .g._1-2._1-1-sm
-      = f.label :game_name
-      = f.text_field :game_name, autofocus: true
-    .g._1-2._1-1-sm
-      = f.label :game_alt_name
-      = f.text_field :game_alt_name
-  %fieldset.grid.form-stacked.m1
-    .g._1-4._1-2-sm
-      = f.label :purchase_date
-      = f.text_field :purchase_date, data: { "date-picker" => true }
-    .g._1-4._1-2-sm
-      = f.label :purchase_price
-      .prepend
-        = f.text_field :purchase_price, class: "prepend"
-    .g._1-2._1-1-sm
-      = f.label :system, "System:"
-      = f.select :system, ["NES", "Famicom", "SNES", "SFC", "GBA", "Genesis", "DS"], include_blank: true
-  %fieldset.m1
-    = f.label :includes, "Includes:"
-    .btn-group
-      - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
-        = f.label :includes, inc, class: "btn btn-tertiary", value: inc do
-          = inc
-          = f.radio_button :includes, inc, checked: inc == @game.includes ? "checked" : false
-  %fieldset
-    = f.attachinary_file_field :photos
-  %fieldset
-    = f.label :not_available
-    = f.check_box :not_available
-  %hr
-  %fieldset.grid
-    .g._1-2
-
-    .g._1-2
-      = f.submit class: 'btn btn-primary', data: { disable_with: (action_name == "new" ? "Adding game..." : "Updating game...")}
-      = f.button "Cancel", class: 'btn btn-link', data: { dismiss: "modal" }, type: "button"
-
-= form_for @game do |hf|
-  %fieldset
-    = hf.hidden_field :not_available, :value => !@game.not_available
-    = hf.submit class: 'btn btn-sm btn-tertiary'
+= form_for @game, { class: "p1" } do |f|
+  .p1
+    = render 'shared/form_error', form: @game
+    %fieldset.grid.form-stacked.mb1
+      .g._1-2._1-1-sm
+        = f.label :game_name
+        = f.text_field :game_name, autofocus: ( true unless disabled ), disabled: disabled
+      .g._1-2._1-1-sm
+        = f.label :game_alt_name
+        = f.text_field :game_alt_name, disabled: disabled
+    %fieldset.grid.form-stacked.mb1
+      .g._1-4._1-2-sm
+        = f.label :purchase_date
+        = f.text_field :purchase_date, data: { "date-picker" => true }, disabled: disabled
+      .g._1-4._1-2-sm
+        = f.label :purchase_price
+        .prepend
+          = f.text_field :purchase_price, class: "prepend", disabled: disabled
+      .g._1-2._1-1-sm
+        = f.label :system, "System:"
+        = f.select :system, ["NES", "Famicom", "SNES", "SFC", "GBA", "Genesis", "DS"], {}, { include_blank: true, disabled: disabled }
+    %fieldset.mb1
+      = f.label :includes, "Includes:"
+      .btn-group
+        - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
+          = f.label :includes, inc, class: "btn btn-tertiary", value: inc, disabled: disabled do
+            = inc
+            = f.radio_button :includes, inc, checked: inc == @game.includes ? "checked" : false, disabled: disabled
+    - unless disabled
+      %fieldset
+        = f.attachinary_file_field :photos, disabled: disabled
+  %fieldset.border-t.skin-gray-lightest.p1
+    - unless action_name == "new"
+      = link_to 'Delete', game_path(@game),
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: "btn btn-danger right"
+    = f.submit class: 'btn btn-primary', data: { disable_with: (action_name == "new" ? "Adding game..." : "Updating game...")}
+    = f.button "Cancel", class: 'btn btn-link', data: { dismiss: "modal" }, type: "button"
