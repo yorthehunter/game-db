@@ -1,0 +1,12 @@
+- partial     ||= nil
+- locals_hash ||= nil
+
+%header.border-b.skin-gray-lightest.p1
+  %aside.right
+    - if partial
+      = render partial: partial, locals: locals_hash if defined? locals_hash
+    - else
+      %button.close.right.btn.btn-link.btn-sm{ aria_label: "Close", data: { dismiss: "modal" }, type: "button" }
+        %span.fa.fa-close{ aria_hidden: "true" }
+  - if heading
+    %h1.h4.m0= heading

@@ -1,0 +1,4 @@
+= form_for game do |hf|
+  %fieldset
+    = hf.hidden_field :not_available, :value => !game.not_available
+    = hf.submit (game.not_available ? "Activate this Game" : "Deactivate this Game"), class: 'btn btn-sm'
