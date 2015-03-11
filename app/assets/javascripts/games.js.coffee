@@ -5,17 +5,27 @@
 
 jQuery(document).ready ->
   $("[data-date-picker]").datepicker()
+
   $(".js-date-picker").datepicker()
 
   $('body').on 'hidden.bs.modal', '.modal', ->
     $(this).removeData 'bs.modal'
+
     $('.modal-content', this).empty()
+
     $('.modal-content', this).append ->
       "<div class='loading-spinner f-xl'><span class='fa fa-spinner'></span></div>"
 
   $('body').on 'loaded.bs.modal', '.modal', ->
     $("[data-date-picker]").datepicker()
+
     $('.attachinary-input').attachinary()
+
+    $("input:checked").parent(".btn").addClass("current")
+    $("input[type='checkbox'], input[type='radio']").change ->
+      $(this).closest(".btn-group").children(".btn").removeClass("current")
+      $(this).parent(".btn").addClass("current")
+
     $("[data-clickable-tiny-thumb]").click (e) ->
       e.preventDefault()
       target = $('[data-thumb-target]')
