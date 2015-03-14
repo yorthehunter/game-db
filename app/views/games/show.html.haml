@@ -6,8 +6,7 @@
       .grid.grid-nopad
         .g._5-6
           %a{ href: (cl_image_path @game.photos.first.path),
-                              target: "_blank",
-                              data: { thumb_target: true } }
+              data: { thumb_target: true, launch_image_modal: true } }
             = cl_image_tag @game.photos.first.path,
               width: 365,
               crop: :fit,

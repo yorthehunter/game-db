@@ -4,28 +4,32 @@
 
 
 jQuery(document).ready ->
+  # Init date picker
   $("[data-date-picker]").datepicker()
-
   $(".js-date-picker").datepicker()
 
-  $('body').on 'hidden.bs.modal', '.modal', ->
+  $('body').on 'hidden.bs.modal', '#edit-modal', ->
     $(this).removeData 'bs.modal'
 
+    # When the modal is closed, remove the remote data and add back a spinner
     $('.modal-content', this).empty()
-
     $('.modal-content', this).append ->
       "<div class='loading-spinner f-xl'><span class='fa fa-spinner'></span></div>"
 
-  $('body').on 'loaded.bs.modal', '.modal', ->
+  $('body').on 'loaded.bs.modal', '#edit-modal', ->
+    # Init date picker
     $("[data-date-picker]").datepicker()
 
+    # Init Attachinary file upload for Cloudinary
     $('.attachinary-input').attachinary()
 
+    # For checkbox buttons, auto add the "current" class and update when changed
     $("input:checked").parent(".btn").addClass("current")
     $("input[type='checkbox'], input[type='radio']").change ->
       $(this).closest(".btn-group").children(".btn").removeClass("current")
       $(this).parent(".btn").addClass("current")
 
+    # Click thumbnails to change the medium sized image path
     $("[data-clickable-tiny-thumb]").click (e) ->
       e.preventDefault()
       target = $('[data-thumb-target]')
@@ -33,6 +37,12 @@ jQuery(document).ready ->
       full_img_path = $(this).data("full-img-path")
       target.attr("href", full_img_path)
       target.find('img').attr("src", thumb_path)
+
+    # Launches a new modal with the enlarged image
+    $('[data-launch-image-modal]').on 'click', (e) ->
+      e.preventDefault()
+      $('[data-image-enlarged]').attr 'src', $(this).attr 'href'
+      $('#image-modal').modal 'show'
 
   $("#new_game").on("ajax:error", (e, data, status, xhr) ->
     $("#new_game").render_form_errors('client', data.responseJSON)
