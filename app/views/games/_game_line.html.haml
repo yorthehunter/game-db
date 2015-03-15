@@ -9,7 +9,9 @@
   %td= game.game_alt_name
   %td.actions
     .btn-group
-      = link_to 'View', '#', class: "btn btn-xs", data: { toggle: "modal", target: "#edit-modal", remote: game_path(game) }
+      = link_to 'View', '#', class: "btn btn-sm btn-primary", data: { toggle: "modal", target: "#edit-modal", remote: game_path(game) }
       - unless action_name == "readonly"
-        = link_to 'Edit',   '#', class: "btn btn-xs", data: { toggle: "modal", target: "#edit-modal", remote: edit_game_path(game) }
-    = link_to 'pricecharting.com »', "http://videogames.pricecharting.com/search?q=#{game.game_name}&type=videogames&go=Go", target: "_blank", class: "btn btn-xs"
+        = link_to 'Edit',   '#', class: "btn btn-sm btn-primary", data: { toggle: "modal", target: "#edit-modal", remote: edit_game_path(game) }
+    = link_to search_link(game), target: "_blank", class: "btn btn-sm btn-secondary" do
+      Search
+      = icon("external-link")
