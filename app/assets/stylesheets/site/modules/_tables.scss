@@ -1,4 +1,15 @@
 %table-standard,
 .table-standard {
-  @extend .table-condensed, .table-hover, .table-striped;
+  @extend .table-condensed, .table-hover;
+}
+
+.unavailable {
+  > td {
+    background-color: darken($base-gray-lightest, 5%);
+    color: $base-gray;
+  }
+
+  &:hover > td {
+    background-color: darken($base-gray-lightest, 5%) !important;
+  }
 }

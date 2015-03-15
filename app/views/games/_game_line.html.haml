@@ -1,4 +1,4 @@
-%tr
+%tr{ class: ("unavailable" if game.not_available?) }
   %td= game.photos.any? ? "#{icon('file-image-o')} x#{game.photos.count}".html_safe : ""
   %td= game.purchase_date
   %td= link_to game.game_name, '#', data: { toggle: "modal", target: "#edit-modal", remote: game_path(game) }
