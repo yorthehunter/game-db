@@ -1,10 +1,10 @@
 %tr{ class: ("unavailable" if game.not_available?) }
   %td= game.photos.any? ? "#{icon('file-image-o')} x#{game.photos.count}".html_safe : ""
-  %td= game.purchase_date
+  %td= !game.purchase_date.blank? ? game.purchase_date : "--"
   %td= link_to game.game_name, '#', data: { toggle: "modal", target: "#edit-modal", remote: game_path(game) }
   %td= game.system
   - unless action_name == "readonly"
-    %td= !game.purchase_price.blank? ? number_to_currency(game.purchase_price) : "--"
+    %td{ data: { purchase_price: true } }= !game.purchase_price.blank? ? number_to_currency(game.purchase_price) : "--"
   %td= game.includes
   %td= game.game_alt_name
   %td.actions
@@ -12,6 +12,6 @@
       = link_to 'View', '#', class: "btn btn-sm btn-primary", data: { toggle: "modal", target: "#edit-modal", remote: game_path(game) }
       - unless action_name == "readonly"
         = link_to 'Edit',   '#', class: "btn btn-sm btn-primary", data: { toggle: "modal", target: "#edit-modal", remote: edit_game_path(game) }
-    = link_to search_link(game), target: "_blank", class: "btn btn-sm btn-secondary" do
-      Search
-      = icon("external-link")
+      = link_to search_link(game), target: "_blank", class: "btn btn-sm btn-secondary" do
+        Search
+        = icon("external-link")

@@ -27,7 +27,7 @@
         - ["None", "CIB", "Instructions", "Box"].each_with_index do |inc, i|
           = f.label :includes, inc, class: "btn btn-tertiary", value: inc, disabled: disabled do
             = inc
-            = f.radio_button :includes, inc, checked: inc == @game.includes ? "checked" : false, disabled: disabled
+            = f.radio_button :includes, inc, checked: inc == @game.includes ? "checked" : (inc == "None" ? "checked" : false), disabled: disabled
     - unless disabled
       %fieldset
         = f.attachinary_file_field :photos, disabled: disabled

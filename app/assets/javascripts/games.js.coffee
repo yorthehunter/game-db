@@ -4,6 +4,18 @@
 
 
 jQuery(document).ready ->
+  # Total amount of purchased dollars
+  calculated_value = 0
+
+  $("[data-purchase-price]").each ->
+    if $(this).html() == "--"
+      calculated_value += 0
+    else
+      calculated_value += Number($(this).html().replace(/[^0-9\.]+/g, ""))
+    return
+  $("[data-total-purchase]").html "$" + calculated_value.toFixed(2)
+
+
   # Init date picker
   $("[data-date-picker]").datepicker()
   $(".js-date-picker").datepicker()

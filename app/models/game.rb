@@ -8,5 +8,4 @@ class Game < ActiveRecord::Base
   def as_json(options={})
     {:game_name => self.game_name}
   end
-
 end
