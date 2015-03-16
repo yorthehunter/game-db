@@ -1,4 +1,5 @@
 # A sample Bowerfile
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
 
-asset 'humblekit', "0.4.3", "git@github.com:yorthehunter/humblekit.git"
+asset 'humblekit', '0.4.3', 'git@github.com:yorthehunter/humblekit.git'
+asset 'StickyTableHeaders'

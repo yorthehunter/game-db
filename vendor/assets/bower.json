@@ -1,6 +1,7 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "humblekit": "git@github.com:yorthehunter/humblekit.git"
+    "humblekit": "git@github.com:yorthehunter/humblekit.git",
+    "StickyTableHeaders": "latest"
   }
 }

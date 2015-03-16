@@ -8,7 +8,7 @@
 
   .m1= link_to "+ New game", '#', class: "btn btn-sm", data: { toggle: "modal", target: "#edit-modal", remote: new_game_path }
 
-  %table.table-standard.full-width
+  %table.table-standard{ data: { sticky_headers: true } }
     %thead
       %tr
         %th img
@@ -19,13 +19,13 @@
         %th= sortable "includes"
         %th Alternate Name
         %th Actions
-    %tbody
-      - @games.each do |game|
-        = render "game_line", game: game
     %tfoot
       %tr
         %td.text-r.light{ colspan: 4 } Total purchase price:
         %td{ colspan: 4, data: { total_purchase: true } }
+    %tbody
+      - @games.each do |game|
+        = render "game_line", game: game
 
   .m1= link_to "+ New game", '#', class: "btn btn-sm", data: { toggle: "modal", target: "#edit-modal", remote: new_game_path }
 

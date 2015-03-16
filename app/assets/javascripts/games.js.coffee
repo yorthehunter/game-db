@@ -4,7 +4,7 @@
 
 
 jQuery(document).ready ->
-  # Total amount of purchased dollars
+  # Sum total purchase price
   calculated_value = 0
 
   $("[data-purchase-price]").each ->
@@ -15,6 +15,8 @@ jQuery(document).ready ->
     return
   $("[data-total-purchase]").html "$" + calculated_value.toFixed(2)
 
+
+  $("[data-sticky-headers]").stickyTableHeaders();
 
   # Init date picker
   $("[data-date-picker]").datepicker()

@@ -1,6 +1,6 @@
 %table-standard,
 .table-standard {
-  @extend .table-condensed, .table-hover;
+  @extend .table-condensed, .table-hover, %full-width;
 }
 
 .unavailable {
